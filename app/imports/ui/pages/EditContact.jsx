@@ -5,6 +5,8 @@ import {
   AutoForm,
   LongTextField,
   TextField,
+  SubmitField,
+  HiddenField, ErrorsField,
 } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -35,7 +37,7 @@ class EditContact extends React.Component {
     return (
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center">Edit Stuff</Header>
+            <Header as="h2" textAlign="center" inverted>Edit Contact</Header>
             <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
               <Segment>
                 <TextField name='firstName'/>
@@ -43,6 +45,9 @@ class EditContact extends React.Component {
                 <TextField name='address'/>
                 <TextField name='image'/>
                 <LongTextField name='description'/>
+                <SubmitField value='Submit'/>
+                <ErrorsField/>
+                <HiddenField name='owner'/>
               </Segment>
             </AutoForm>
           </Grid.Column>

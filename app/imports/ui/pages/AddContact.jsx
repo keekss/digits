@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Segment, Header } from 'semantic-ui-react';
-import { AutoForm, ErrorsField, LongTextField, TextField } from 'uniforms-semantic';
+import { AutoForm, ErrorsField, SubmitField, HiddenField, LongTextField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -50,7 +50,9 @@ class AddContact extends React.Component {
                 <TextField name='address'/>
                 <TextField name='image'/>
                 <LongTextField name='description'/>
+                <SubmitField value='Submit'/>
                 <ErrorsField/>
+                <HiddenField name='owner'/>
               </Segment>
             </AutoForm>
           </Grid.Column>
